@@ -7,8 +7,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "g4f": "^1.0.0"
+    "express": "*",
+    "g4f": "*"
   },
   "engines": {
     "node": "18.x"
