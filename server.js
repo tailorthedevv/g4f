@@ -1,9 +1,8 @@
 const express = require('express');
 const g4f = require('g4f');
-const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
-app.use(bodyParser.json());
+app.use(express.json());
 async function processQuestion(text) {
     try {
         const response = await g4f.ask({
