@@ -4,14 +4,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 app.use(bodyParser.json());
-
 async function processQuestion(text) {
     try {
         const response = await g4f.ask({
             text: text,
             model: "gpt-3.5-turbo",
             temperature: 0.7,
-            max_tokens: 2000 
+            max_tokens: 2000
         });
         return response.text;
     } catch (error) {
@@ -27,7 +26,6 @@ app.post('/process-question', async (req, res) => {
     const cleanedQuestion = await processQuestion(encryptedText);
     res.json({ cleanedQuestion });
 });
-
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
